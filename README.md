@@ -17,7 +17,7 @@ Gagne assez de berry pour débloquer :
 
 4. **Ville Orange** : Luffy et son équipage rencontrent Baggy le Clown.
 
-5. **Île des Animaux Rares** : Luffy et son équipage rencontrent Mohmoo.
+5. **Île des Animaux Rares** : Luffy et son équipage rencontrent Momoo.
 
 6. **Archipel des Gekko** : Luffy et son équipage rencontrent Gaimon.
 
@@ -61,7 +61,17 @@ Gagne assez de berry pour débloquer :
 
 19. **Archipel Sabaody** : Luffy et son équipage sont séparés.
     - *Élément marquant* : Luffy développe son Haki de l'Armement et s'évade avec l'aide d'autres prisonniers.
-
+      
+       - **Amazon Lily** : Luffy est envoyé ici par Bartholomew Kuma.
+       - **Kuraigana Island** (Mihawk's Island) : Zoro est envoyé ici.
+       - **Weatheria** : Nami se retrouve ici.
+       - **Greenstone** : Usopp est envoyé ici.
+       - **Momoiro Island** : Sanji est envoyé ici.
+       - **Baltigo** : Chopper est envoyé ici.
+       - **Tequila Wolf** : Robin est envoyée ici.
+       - **Karakuri Island** (Baldimore) : Franky est envoyé ici.
+       - **Namakura Island** : Brook est envoyé ici.
+       - 
 20. **Impel Down** : Luffy est emprisonné ici pour libérer Ace.
     - *Élément marquant* : Luffy apprend à maîtriser son Haki de l'Armement et fait équipe avec d'autres prisonniers pour s'évader.
 
