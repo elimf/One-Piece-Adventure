@@ -1,3 +1,11 @@
+## Objectifs :
+Terminer le jeu en ayant tout débloqué 
+Gagne assez de berry pour débloquer :
+- chaque ile de l'aventure de nos mugiwara
+- chaque membres d'équipage
+- chaque combat
+- chaque aptitude
+
 
 ## Liste des iles du Jeu 
 1. **Île de Goa** : Luffy et Ace sont nés.
