@@ -2,5 +2,7 @@
 import CardForm from '../components/form/CardForm.vue'
 </script>
 <template>
-  <CardForm page="register" />
+  <div id="web">
+    <CardForm page="register" />
+  </div>
 </template>
