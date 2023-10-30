@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import GameMenu from '@/components/home/HomeMenu.vue'
+import TitleMenu from '@/components/home/TitleHomeMenu.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <div id="web">
+        <TitleMenu />
+        <GameMenu />
+    </div>
 </template>
