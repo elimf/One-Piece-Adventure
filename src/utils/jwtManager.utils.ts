@@ -39,7 +39,7 @@ export class JwtTokenManager {
   }
 
   public async refreshToken(): Promise<string | null> {
-    const token = this.getToken()
+    const token = this.getTokenRefresh()
     if (!token) {
       return null
     }
