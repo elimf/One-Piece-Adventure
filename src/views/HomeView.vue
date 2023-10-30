@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import GameMenu from '@/components/home/HomeMenu.vue'
+import TitleMenu from '@/components/home/TitleHomeMenu.vue'
 </script>
 
 <template>
-<h1>Welcome to One Piece Adventure </h1>
+    <div id="web">
+        <TitleMenu />
+        <GameMenu />
+    </div>
 </template>
