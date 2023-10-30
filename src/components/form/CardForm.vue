@@ -104,6 +104,7 @@ import Swal from 'sweetalert2'
 import type { ErrorMessagesAuth } from '@/types/auth/errorMessagesAuth.types'
 import type { UserFormTypes } from '@/types/auth/userFormTypes.utils'
 import { AuthUtils } from '@/utils/auth.utils'
+import { JwtTokenManager } from '@/utils/jwtManager.utils'
 
 export default {
   props: {
@@ -161,7 +162,7 @@ export default {
 
       // Construire l'URL du backend en utilisant la variable d'environnement
       const backendUrl = import.meta.env.VITE_BACKEND_URL
-
+      const tokenManager = new JwtTokenManager()
       // Définir l'URL de la requête en fonction de la page
       let requestUrl = ''
       if (props.page === 'register') {
@@ -178,8 +179,6 @@ export default {
           password: newForm.password.value
         })
         .then((response: AxiosResponse<any>) => {
-          // Gérer la réponse du backend
-          console.log(response)
           const successMessage =
             props.page === 'register' ? 'Account created successfully !' : 'Login !'
           if (response.status === 201) {
@@ -189,6 +188,13 @@ export default {
               text: successMessage,
               timer: 3000
             })
+            console.log(response.data.access_token)
+            if (props.page === 'login') {
+              tokenManager.cleaner()
+              tokenManager.setToken(response.data.access_token)
+              tokenManager.setRefreshToken(response.data.refresh_token)
+              window.location.href = '/game'
+            }
             // Réinitialiser les valeurs du formulaire
             newForm.username.value = null
             newForm.email.value = ''
