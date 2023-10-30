@@ -35,7 +35,6 @@ export class JwtTokenManager {
   public isTokenValid(token: string): boolean {
     if (!token) return false
     const decodedToken = JSON.parse(atob(token.split('.')[1]))
-    console.log(decodedToken.exp * 1000 > Date.now())
     return decodedToken.exp * 1000 > Date.now()
   }
 
