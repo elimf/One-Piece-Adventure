@@ -6,3 +6,12 @@ import CardForm from '../components/form/CardForm.vue'
     <CardForm page="register" />
   </div>
 </template>
+<style scoped>
+#web {
+  width: 100%;
+  height: 100vh;
+  background: url('../assets/img/3guys.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+</style>
