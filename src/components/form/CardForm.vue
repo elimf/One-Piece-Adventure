@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute w-2/6 h-2/6 top-1/4 left-1/3">
+  <div class="absolute w-2/6 h-2/6 top-24 left-1/3">
     <div class="bg-white shadow-md p-4 rounded-lg opacity-75">
       <div class="m-2">
         <h1 class="text-xl text-black text-center font-mono">
@@ -71,13 +71,13 @@
           <a
             type="button"
             href="/"
-            class="mt-3 inline-flex w-full justify-center rounded-md bg-red px-3 py-2 text-sm font-semibold text-red-900 shadow-sm ring-1 ring-inset ring-red-300 hover:bg-red-50 sm:mt-0 sm:w-auto"
+            class="game-button red"
           >
             Back
           </a>
           <button
             type="submit"
-            class="inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
+            class="game-button green"
           >
             Confirm
           </button>
