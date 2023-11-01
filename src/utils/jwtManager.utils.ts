@@ -43,24 +43,16 @@ export class JwtTokenManager {
     if (!token) {
       return null
     }
+    // Faites une requête au serveur pour rafraîchir le token
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/refreshToken`, {
+      token: token
+    })
 
-    try {
-      // Faites une requête au serveur pour rafraîchir le token
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/refreshToken`, {
-        token: token
-      })
-
-      if (response.status === 200 && response.data && response.data.newToken) {
-        const newToken = response.data.newToken
-        this.setToken(newToken)
-        return newToken
-      } else {
-        // Gérez le cas où la requête échoue ou le serveur ne renvoie pas un nouveau token
-        return null
-      }
-    } catch (error) {
-      // Gérez les erreurs de la requête, par exemple, si le serveur est inaccessible
-      console.error('Erreur lors du rafraîchissement du token :', error)
+    if (response.status === 200 && response.data && response.data.newToken) {
+      const newToken = response.data.newToken
+      this.setToken(newToken)
+      return newToken
+    } else {
       return null
     }
   }

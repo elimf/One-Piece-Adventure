@@ -226,4 +226,3 @@ export default {
   }
 }
 </script>
-@/types/auth/errorMessagesAuth.types
