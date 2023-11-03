@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import LoginView from '../views/LoginView.vue'
 import GameView from '../views/GameView.vue'
+import MainMenuView from '../views/MainMenuView.vue'
 import { JwtTokenManager } from '@/utils/jwtManager.utils'
 
 const tokenManager = new JwtTokenManager()
@@ -28,6 +29,12 @@ const router = createRouter({
       path: '/game',
       name: 'Game',
       component: GameView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path:'/main',
+      name:'Main',
+      component: MainMenuView,
       meta: { requiresAuth: true }
     }
   ]

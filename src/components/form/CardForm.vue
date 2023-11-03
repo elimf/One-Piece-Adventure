@@ -125,7 +125,7 @@ export default {
     }
 
     const handleFormSubmit = () => {
-      // Réinitialisation des messages d'erreur à une chaîne vide
+      // Resetting error messages to an empty string
       errors.email.value = ''
       errors.password.value = ''
       errors.username.value = ''
@@ -160,10 +160,10 @@ export default {
         return
       }
 
-      // Construire l'URL du backend en utilisant la variable d'environnement
+      // Build the backend URL using the environment variable
       const backendUrl = import.meta.env.VITE_BACKEND_URL
       const tokenManager = new JwtTokenManager()
-      // Définir l'URL de la requête en fonction de la page
+      // Define the URL of the request according to the page
       let requestUrl = ''
       if (props.page === 'register') {
         requestUrl = `${backendUrl}/auth/register`
@@ -171,7 +171,7 @@ export default {
         requestUrl = `${backendUrl}/auth/login`
       }
 
-      // Effectuer la requête Axios
+      // Perform the Axios query
       axios
         .post(requestUrl, {
           username: newForm.username.value,
@@ -193,9 +193,11 @@ export default {
               tokenManager.cleaner()
               tokenManager.setToken(response.data.access_token)
               tokenManager.setRefreshToken(response.data.refresh_token)
-              window.location.href = '/game'
+              window.location.href = '/main'
+            }else{
+              window.location.href = '/login'
             }
-            // Réinitialiser les valeurs du formulaire
+            // Reset form values
             newForm.username.value = null
             newForm.email.value = ''
             newForm.password.value = ''
