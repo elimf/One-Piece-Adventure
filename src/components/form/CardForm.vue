@@ -102,7 +102,7 @@ import { ref } from 'vue'
 import axios, { AxiosError, type AxiosResponse } from 'axios'
 import Swal from 'sweetalert2'
 import type { ErrorMessagesAuth } from '@/types/auth/errorMessagesAuth.types'
-import type { UserFormTypes } from '@/types/auth/userFormTypes.utils'
+import type { UserFormTypes } from '@/types/auth/userFormTypes.types'
 import { AuthUtils } from '@/utils/auth.utils'
 import { JwtTokenManager } from '@/utils/jwtManager.utils'
 
@@ -228,3 +228,4 @@ export default {
   }
 }
 </script>
+@/types/auth/userFormTypes.types
