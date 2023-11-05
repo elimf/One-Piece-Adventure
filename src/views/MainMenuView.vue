@@ -1,7 +1,9 @@
-<template>
-  <NavbarComponent @navbarItemClick="updateModalTitle" />
-
+<template >
+  <div id="web">
+    <NavbarComponent @navbarItemClick="updateModalTitle" />
   <Modal :title="modalTitle" />
+  </div>
+  
 </template>
 
 <script lang="ts">
@@ -25,6 +27,14 @@ export default {
   }
 }
 </script>
-
+<style scoped>
+#web {
+  width: 100%;
+  height: 100vh;
+  background: url('../assets/img/wallpaper/luffy-wallpaper.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+</style>
 
 

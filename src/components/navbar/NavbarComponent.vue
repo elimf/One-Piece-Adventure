@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-amber-400 flex justify-center h-4/5">
+  <nav class="bg-amber-400 flex justify-center ">
     <ul class="navbar-menu">
       <li v-for="item in navbarItems" :key="item.id" @click="showModal(item)">
         <a class="group relative p-2 text-2xl text-blue-600 hover-bg-orange-300 cursor-pointer">{{
@@ -24,7 +24,6 @@ export default {
   methods: {
     showModal(item: ItemNavbarTypes) {
       this.$emit("navbarItemClick", item.title);
-      console.log('showModal', item.title)
     }
   }
 }

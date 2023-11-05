@@ -47,13 +47,13 @@ const isActionTaken = computed(() => isKeyPressed.value || isMouseClicked.value)
 </script>
 <style scoped>
 .background-class-when-taken {
-  background: url('../assets/img/luffy.jpeg');
+  background: url('../assets/img/wallpaper/luffy.jpeg');
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
 
 .background-class-when-not-taken {
-  background: url('../assets/img/wallpaper.jpg'); 
+  background: url('../assets/img/wallpaper/wallpaper.jpg'); 
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }

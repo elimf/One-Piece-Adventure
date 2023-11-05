@@ -10,7 +10,7 @@ import CardForm from '../components/form/CardForm.vue'
 #web {
   width: 100%;
   height: 100vh;
-  background: url('../assets/img/3guys.jpeg');
+  background: url('../assets/img/wallpaper/3guys.jpeg');
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
