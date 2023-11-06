@@ -1,11 +1,11 @@
 <template>
   <div>
-    <button class="text-4xl" @click="confirmLogout">Logout</button>
+    <button class="text-4xl game-button red" @click="confirmLogout">Logout</button>
     <div v-if="showConfirmation" class="confirmation flex flex-col justify-center">
       <p class="text-black text-center text-5xl">Voulez-vous vraiment vous déconnecter ?</p>
       <div class="flex justify-around">
-        <button class="text-black text-4xl" @click="logout">Oui</button>
-        <button class="text-black text-4xl" @click="cancelLogout">Non</button>
+        <button class="text-black text-4xl game-button red" @click="logout">Oui</button>
+        <button class="text-black text-4xl game-button green" @click="cancelLogout">Non</button>
       </div>
     </div>
   </div>

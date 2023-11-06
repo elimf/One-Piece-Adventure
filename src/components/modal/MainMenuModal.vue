@@ -3,7 +3,7 @@
     <div class="modal w-11/12 h-4/6 bg-black relative opacity-70">
       <div class="modal-content p-4 rounded-lg shadow-lg relative bg-black">
         <div class="flex justify-between items-center mb-4">
-          <h1 class="text-xl font-bold">{{ title }}</h1>
+          <h1 class="font-bold text-6xl">{{ title }}</h1>
         </div>
         <div v-if="title === 'Game'"><GameComponent /></div>
         <div v-if="title === 'Personnages'"><CharacterComponent /></div>
