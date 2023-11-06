@@ -66,6 +66,7 @@
                 placeholder="******************"
               />
               <button
+              v-show="newForm.password.value"
                 type="button"
                 @click="togglePasswordVisibility"
                 class="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
@@ -73,20 +74,13 @@
                 <IconEyeSlash
                   v-if="showPassword"
                   color="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
                 <IconEye
                   v-else
                   color="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
               </button>
             </div>
-
             <p class="text-red-500">{{ errors.password.value }}</p>
           </div>
         </div>
@@ -167,11 +161,12 @@ export default {
       if (!newForm.password.value || !newForm.password.value.trim()) {
         errors.password.value = 'Password is required.'
         hasErrors = true
-      } else if (!authUtils.isPasswordSecure(newForm.password.value)) {
-        errors.password.value =
-          'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.'
-        hasErrors = true
       }
+      //  else if (!authUtils.isPasswordSecure(newForm.password.value)) {
+      //   errors.password.value =
+      //     'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.'
+      //   hasErrors = true
+      // }
 
       if (hasErrors) {
         return
