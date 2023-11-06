@@ -11,7 +11,7 @@
 </template>
 <script lang="ts">
 import { dataNavbar } from '@/data/navbar/navbarData.data'
-import { type ItemNavbarTypes } from '@/types/navbar/itemNavbarTypes.types'
+import { type ItemNavbarTypes } from '@/types/navbar/itemNavbarTypes.types.d'
 
 export default {
   components: {
