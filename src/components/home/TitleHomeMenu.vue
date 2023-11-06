@@ -1,5 +1,5 @@
 <template>
-  <div class="wavy text-9xl ">
+  <div class="wavy absolute top-1/4 text-center w-full text-9xl ">
     <span style="--i: 1">O</span>
     <span style="--i: 2">n</span>
     <span style="--i: 3">e</span>
@@ -22,11 +22,6 @@
   </div>
 </template>
 <style scoped>
-.wavy {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-}
 .wavy span {
   position: relative;
   display: inline-block;

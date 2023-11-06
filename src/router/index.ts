@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import LoginView from '../views/LoginView.vue'
-import GameView from '../views/GameView.vue'
+import HomeView from '@/views/HomeView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import LoginView from '@/views/LoginView.vue'
+import GameOnlineView from '@/views/GameOnlineView.vue'
+import GameStoryView from '@/views/GameStoryView.vue'
+import MainMenuView from '@/views/MainMenuView.vue'
 import { JwtTokenManager } from '@/utils/jwtManager.utils'
 
 const tokenManager = new JwtTokenManager()
@@ -25,9 +27,21 @@ const router = createRouter({
       component: LoginView
     },
     {
-      path: '/game',
-      name: 'Game',
-      component: GameView,
+      path: '/main',
+      name: 'Main',
+      component: MainMenuView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/online-mode',
+      name: 'OnlineGame',
+      component: GameOnlineView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/story-mode',
+      name: 'StoryGame',
+      component: GameStoryView,
       meta: { requiresAuth: true }
     }
   ]

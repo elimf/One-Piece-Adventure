@@ -15,7 +15,6 @@ export default {
   methods: {}
 }
 </script>
-
 <style>
 .one-piece-text {
   font-family: 'OnePieceFont', sans-serif;
