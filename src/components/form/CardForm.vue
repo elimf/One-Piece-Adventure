@@ -57,30 +57,42 @@
             >
               Password
             </label>
-            <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="password"
-              type="password"
-              v-model="newForm.password.value"
-              placeholder="******************"
-            />
+            <div class="relative">
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 pr-12 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="password"
+                :type="showPassword ? 'text' : 'password'"
+                v-model="newForm.password.value"
+                placeholder="******************"
+              />
+              <button
+                type="button"
+                @click="togglePasswordVisibility"
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+              >
+                <IconEyeSlash
+                  v-if="showPassword"
+                  color="black"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <IconEye
+                  v-else
+                  color="black"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </button>
+            </div>
+
             <p class="text-red-500">{{ errors.password.value }}</p>
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:flex sm:justify-between sm:px-6">
-          <a
-            type="button"
-            href="/"
-            class="game-button red"
-          >
-            Back
-          </a>
-          <button
-            type="submit"
-            class="game-button green"
-          >
-            Confirm
-          </button>
+          <a type="button" href="/" class="game-button red"> Back </a>
+          <button type="submit" class="game-button green">Confirm</button>
         </div>
         <router-link
           :to="$props.page === 'register' ? '/login' : '/register'"
@@ -105,10 +117,15 @@ import type { ErrorMessagesAuth } from '@/types/auth/errorMessagesAuth.types'
 import type { UserFormTypes } from '@/types/auth/userFormTypes.types'
 import { AuthUtils } from '@/utils/auth.utils'
 import { JwtTokenManager } from '@/utils/jwtManager.utils'
-
+import IconEye from '@/components/icons/IconEye.vue'
+import IconEyeSlash from '@/components/icons/IconEyeSlash.vue'
 export default {
   props: {
     page: String
+  },
+  components: {
+    IconEye,
+    IconEyeSlash
   },
 
   setup(props: any) {
@@ -194,7 +211,7 @@ export default {
               tokenManager.setToken(response.data.access_token)
               tokenManager.setRefreshToken(response.data.refresh_token)
               window.location.href = '/main'
-            }else{
+            } else {
               window.location.href = '/login'
             }
             // Reset form values
@@ -219,13 +236,18 @@ export default {
           })
         })
     }
-
+    const showPassword = ref(false)
+    const togglePasswordVisibility = () => {
+      console.log(showPassword.value)
+      showPassword.value = !showPassword.value
+    }
     return {
       newForm,
       errors,
-      handleFormSubmit
+      handleFormSubmit,
+      showPassword,
+      togglePasswordVisibility
     }
   }
 }
 </script>
-@/types/auth/userFormTypes.types
