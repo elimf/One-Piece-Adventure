@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      navbarItems: dataNavbar as ItemNavbarTypes[]
+      navbarItems: dataNavbar 
     }
   },
   methods: {
