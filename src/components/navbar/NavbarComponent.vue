@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-amber-400 flex justify-center ">
+  <nav class="bg-amber-400 flex justify-center absolute w-screen z-50 h-14">
     <ul class="navbar-menu">
       <li v-for="item in navbarItems" :key="item.id" @click="showModal(item)">
         <a class="group relative p-2 text-2xl text-blue-600 hover-bg-orange-300 cursor-pointer">{{
