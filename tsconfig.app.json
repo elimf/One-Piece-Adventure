@@ -7,8 +7,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/components/*": ["src/components/*"]
+      "@/assets/*": ["src/assets/*"],
+      "@/components/*": ["src/components/*"],
+      "@/data/*": ["src/data/*"],
+      "@/stores/*": ["src/stores/*"],
+      "@/types/*": ["src/types/*"],
+      "@/views/*": ["src/views/*"],
+      "@/utils/*": ["src/utils/*"]
     }
   }
 }

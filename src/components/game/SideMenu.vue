@@ -3,7 +3,7 @@
     class="absolute top-0 right-0 flex h-screen w-32 flex-col items-center border-r border-gray-200 bg-black"
   >
     <div class="flex h-[7.5rem] w-full items-center justify-center border-b border-gray-200 p-2">
-      <img src="/src/assets/img/one-piece.png" />
+      <img src="/src/assets/img/fanion/one-piece.png" />
     </div>
     <nav class="flex flex-1 flex-col gap-y-4 pt-10">
       <a
@@ -12,7 +12,7 @@
         @click="showModal(item)"
         class="group relative rounded-xl p-2 text-blue-600 hover:bg-blue-500 cursor-pointer"
       >
-        <img class="rounded-xl w-16" :src="item.imgSrc" />
+        <img class="rounded-xl w-12" :src="item.imgSrc" />
         <div class="absolute inset-y-0 right-24 hidden items-center group-hover:flex">
           <div
             class="relative whitespace-nowrap rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 drop-shadow-lg text-2xl tracking-wide"
@@ -67,31 +67,31 @@ export default {
       sidebarItems: [
         {
           id: 1,
-          imgSrc: '/src/assets/img/beard.jpeg',
+          imgSrc: '/src/assets/img/fanion/beard.jpeg',
           tooltip: 'Layouts',
           color: 'blue'
         },
         {
           id: 2,
-          imgSrc: '/src/assets/img/shanks.jpeg',
+          imgSrc: '/src/assets/img/fanion/shanks.jpeg',
           tooltip: 'Color Scheme',
           color: 'gray'
         },
         {
           id: 3,
-          imgSrc: '/src/assets/img/luffy01.jpeg',
+          imgSrc: '/src/assets/img/fanion/luffy01.jpeg',
           tooltip: 'Layouts',
           color: 'blue'
         },
         {
           id: 4,
-          imgSrc: '/src/assets/img/kaido.jpeg',
+          imgSrc: '/src/assets/img/fanion/kaido.jpeg',
           tooltip: 'Kaido',
           color: 'gray'
         },
         {
           id: 5,
-          imgSrc: '/src/assets/img/baggy.jpeg',
+          imgSrc: '/src/assets/img/fanion/baggy.jpeg',
           tooltip: 'Inventory',
           color: 'gray'
         }

@@ -11,6 +11,7 @@ One Piece Adventure is an idle game set in the exciting world of One Piece. Join
 - Battle formidable foes and conquer Grand Line challenges.
 - Build your own pirate crew and level up their abilities.
 - Become the ultimate Pirate King in the One Piece world.
+- Multiple game choice
 
 ## Getting Started
 
