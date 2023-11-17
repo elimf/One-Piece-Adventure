@@ -1,11 +1,9 @@
-
-import React from 'react';
-
+import React from "react";
+import TitleHome from "../components/Home/TitleHome";
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Bienvenue sur la page d'accueil</h1>
-      <p>C'est ici que vous pouvez commencer votre aventure dans le monde de One Piece!</p>
+      <TitleHome inputString="Bienvenue dans l'aventure" />
     </div>
   );
 };
