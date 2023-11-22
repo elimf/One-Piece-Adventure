@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
+import {useAuth}  from "../router/AuthContext"; 
 
 interface FormDataLogin {
   email: string;
@@ -21,6 +22,8 @@ interface FormErrorsLogin {
 }
 
 const Login: React.FC = () => {
+  console.log(import.meta.env.VITE_BACKEND_URL);
+  
   const [formData, setFormData] = useState<FormDataLogin>({
     email: "",
     password: "",
@@ -31,7 +34,7 @@ const Login: React.FC = () => {
   const validateForm = () => {
     let valid = true;
     const newErrors: FormErrorsLogin = {};
-
+    
     if (!formData.email) {
       newErrors.email = "Email is required";
       valid = false;
@@ -50,7 +53,7 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     if (validateForm()) {
-      // Your form submission logic here
+     login(formData);
       console.log("Form is valid, submit the data:", formData);
     } else {
       console.log("Form is not valid");
@@ -64,6 +67,7 @@ const Login: React.FC = () => {
       [name]: value,
     }));
   };
+  const { login } = useAuth();
 
   return (
     <Box

@@ -18,13 +18,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<AuthContextProps> = ({ children }) => {
   const [token, setToken] = useState<string | null>(null);
   const [currentRefreshToken, setRefreshToken] = useState<string | null>(null);
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   // Function to handle user login.
   const login = async (credentials: { email: string; password: string }) => {
     try {
-      // Access the backend URL from the environment variable.
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
       // Make a request to the login endpoint using provided credentials.
       const response = await axios.post(
         `${backendUrl}/auth/login`,
@@ -36,14 +33,18 @@ export const AuthProvider: React.FC<AuthContextProps> = ({ children }) => {
         }
       );
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         const { access_token, refresh_token } = response.data;
+        console.log(access_token, refresh_token);
+        
         setToken(access_token);
         setRefreshToken(refresh_token);
         localStorage.setItem("refresh_token", refresh_token);
         localStorage.setItem("access_token", access_token);
+        window.location.href = "/home";
       } else {
-        throw new Error("Failed to log in");
+      console.log(response.status);
+      
       }
     } catch (error) {
       console.error("Error logging in:", error);
@@ -63,9 +64,6 @@ export const AuthProvider: React.FC<AuthContextProps> = ({ children }) => {
   // Function to refresh the access token using the refresh token.
   const refreshAccessToken = async () => {
     try {
-      // Access the backend URL from the environment variable.
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
       // Make a request to the refresh token endpoint using the stored refresh token.
       const response = await axios.post(
         `${backendUrl}/refresh`,
